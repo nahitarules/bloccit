@@ -164,7 +164,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.1.0)
   jquery-rails
-  pg (~> 0.18)
+  pg
   rails (= 4.2.8)
   rails_12factor
   rspec-rails (~> 3.0)
