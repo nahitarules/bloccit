@@ -1,10 +1,5 @@
-<h1> All Ads</h1>
-<% @advertisements.each do |ad| %>
-  <div class="media">
-    <div class="media-body">
-      <h4 class="media-heading">
-        <%= link_to "$#{ad.price}: #{ad.title}", ad%>
-      </h4>
-    </div>
-  </div>
-<% end %>
+require 'rails_helper'
+
+RSpec.describe "advertisements/index.html.erb", type: :view do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
