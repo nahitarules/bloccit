@@ -21,7 +21,8 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
 
-gem 'bcrypt'
+# Used for encrypting User passwords
+ gem 'bcrypt'
 
  # Use SCSS for stylesheets
  gem 'sass-rails', '~> 5.0'
