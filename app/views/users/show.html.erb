@@ -19,8 +19,41 @@
    </div>
  </div>
 
+ <h2>Favorites</h2>
+ <% if no_user_favorites(@user) %>
+   <p><%= @user.name %> has no favorites.</p>
+ <% else %>
+ <% @user.favorites.each do |favorite| %>
+
+ <div class="row">
+   <div class="col-md-8">
+     <div class="media">
+       <br />
+       <% avatar_url = User.avatar_url(@user, 64) %>
+       <% unless avatar_url.nil? %>
+        <div class="media-left">
+          <%= image_tag avatar_url, class: 'media-object' %>
+        </div>
+    <% end %>
+    <div class="media-body">
+      <h3 class="media-heading"> <%= render partial: 'posts/post', locals: { post: favorite.post } %> </h3>
+    </div>
+  </div>
+ </div>
+</div>
+ <% end %>
+ <% end %>
+
  <h2>Posts</h2>
- <%= render @user.posts %>
+ <% if no_user_posts(@user) %>
+   <p><%= @user.name %> has not submitted any posts yet.</p>
+ <% else %>
+   <%= render @user.posts %>
+ <% end %>
 
  <h2>Comments</h2>
- <%= render @user.comments %>
+ <% if no_user_comments(@user) %>
+   <p><%= @user.name %> has not submitted any comments yet.</p>
+ <% else %>
+   <%= render @user.comments %>
+ <% end %>
